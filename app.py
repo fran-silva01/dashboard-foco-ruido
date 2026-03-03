@@ -13,7 +13,7 @@ st.markdown("""
     <style>
     /* Estiliza o quadrado em volta da métrica */
     [data-testid="stMetric"] {
-        background-color: #f0f8ff; /* Azul bem clarinho (AliceBlue) */
+        background-color: #ffffff; /* Força o card a ser sempre branco */
         border: 2px solid #005b96;  /* Borda azul sólida */
         padding: 15px;
         border-radius: 10px;       /* Cantos levemente arredondados */
@@ -63,7 +63,7 @@ df_filtered = df[
 
 # --- CABEÇALHO ---
 st.title("Dashboard:")
-st.image("images/banner.png", caption="Estudo sobre produtividade em diferentes condições acústicas", use_container_width=True)
+st.image("images/banner.png", caption="Estudo sobre produtividade em diferentes condições acústicas", width='stretch')
 
 # Métricas com estilo de card
 st.markdown("### Indicadores Principais")
@@ -122,7 +122,7 @@ with col_left:
 )
 
     # Exibindo no Streamlit
-    st.plotly_chart(fig_ruido, use_container_width=True)
+    st.plotly_chart(fig_ruido, width='stretch')
 
 with col_right:
     st.subheader("2. Distribuição de Foco por Papel")
@@ -135,7 +135,7 @@ with col_right:
         points='all'
     )
     fig2.update_layout(plot_bgcolor='white')
-    st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(fig2, width='stretch')
 
 # --- GRÁFICOS ESTÁTICOS ---
 st.markdown("---")
@@ -198,5 +198,5 @@ fig_age.add_annotation(
 )
 
 fig_age.update_layout(yaxis_title="Contagem de Participantes", hovermode='x unified')
-st.plotly_chart(fig_age, use_container_width=True)
+st.plotly_chart(fig_age, width='stretch')
 
